@@ -8,6 +8,7 @@ var http = require('http');
 
 // load customers route
 var customers = require('./routes/customers');
+var register = require('./routes/register');
 var connection = require('express-myconnection');
 var mysql = require('mysql');
 
@@ -79,6 +80,9 @@ app.use(
 // route index, hello world
 app.get('/', routes.index);
 
+/* 
+ * CUSTOMERS REST API
+ */
 // route customer list
 app.get('/customers', customers.list);
 
@@ -92,6 +96,12 @@ app.get('/customers/delete/:id', customers.delete_customer);
 // edit customer route, get n post
 app.get('/customers/edit/:id',customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
+
+/*
+ * USER REST API
+ */
+app.get('/register', register.show);
+app.post('/register',register.save);
 
 //app.use(app.router);
 http.createServer(app).listen(app.get('port'), function(){

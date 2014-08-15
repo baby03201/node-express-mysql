@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+    <head>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <script type="text/javascript" src="/js/all.js"></script>
+    </head>
+    <body>
+    <div class="page-data">
+
+        <table cellpadding = "11">
+            <tr>
+                <td class="label">Username</td><td>: <input type="text" name="username" required></td>
+            </tr>
+            <tr>
+                <td class="label">password</td><td>: <input type="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td class="label"></td>
+                <td>
+                    &nbsp; <input type="submit" name="Login" value="Login">
+                    <input type="button" name="Register" value="Register" class="cancel" onClick="registerClick()">
+                </td>
+            </tr>
+        </table>
+    </div>
+    </body>
 </html>
