@@ -8,7 +8,7 @@ function cancelAdd(){
 }
 function registerClick(){
     
-    window.location.href = '/register';
+    window.location.href = '/user';
 }
 function cancelClick(){
 

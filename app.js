@@ -5,10 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var passwordHash = require('password-hash');
 
 // load customers route
 var customers = require('./routes/customers');
-var register = require('./routes/register');
+var user = require('./routes/user');
 var connection = require('express-myconnection');
 var mysql = require('mysql');
 
@@ -100,8 +101,12 @@ app.post('/customers/edit/:id',customers.save_edit);
 /*
  * USER REST API
  */
-app.get('/register', register.show);
-app.post('/register',register.save);
+// login
+//app.get('/user/login',user.login);
+
+// register 
+app.get('/user', user.show);
+app.post('/user',user.save);
 
 //app.use(app.router);
 http.createServer(app).listen(app.get('port'), function(){
