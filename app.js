@@ -19,7 +19,7 @@ var routes = require('./routes');
 var app = express();
 
 // view engine setup & all environments
-app.set('port', process.env.PORT || 4300);
+app.set('port', 4300);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -102,7 +102,7 @@ app.post('/customers/edit/:id',customers.save_edit);
  * USER REST API
  */
 // login
-//app.get('/user/login',user.login);
+app.post('/user/login',user.login);
 
 // register 
 app.get('/user', user.show);

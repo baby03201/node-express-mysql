@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <link rel='stylesheet' href='/css/style.css'/>
-    <script type="text/javascript" src="/js/all.js"></script>
-    </head>
-    <body>
-        <div id="wrapper">
-            <div class="page-header"><h2>Login - Node.js</h2></div>
-            <div class="page-container">
-    
+<%- include layouts/header.ejs %> 
     <div class="page-data">
-    <form method="post" action="user/login">
+    <form method="post" action="login">
         <table cellpadding = "11">
+            <tr>
+                <td class="label"><%=data %></td>
+            </tr>
             <tr>
                 <td class="label">Username</td><td>: <input type="text" name="username" required></td>
             </tr>
@@ -28,7 +21,4 @@
         </table>
     </form>
     </div>
-        </div>
-    </div>
-    </body>
-</html>
+<%- include layouts/footer.ejs%>
