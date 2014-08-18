@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
-var passwordHash = require('password-hash');
 
 // load customers route
 var customers = require('./routes/customers');
